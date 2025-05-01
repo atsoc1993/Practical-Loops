@@ -11,13 +11,13 @@ If a number is not divisible by either 3 or 5, log the number.
 Remember to commit your solution once it is working.
 */
 
-for (let i=1; i <= 100; i++) {
-    if (i % 3 == 0 && i % 5 == 0) { 
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
         console.log("Fizz Buzz.");
 
     } else if (i % 5 == 0) {
         console.log("Buzz.");
-        
+
     } else if (i % 3 == 0) {
         console.log("Fizz.");
 
@@ -43,13 +43,12 @@ Continuing with the example above, if n is equal to 4, your loop should log 5. S
 Be careful! If you set n to a number too large, your loop could take a long time to process.
 */
 
-let n = 18;
+let n = 20;
 
-for (let i=n; i >= n; i++) {
+for (let i = n + 1; ; i++) {
     let divisors = 0;
 
-    if (n === 4) {}
-    for (let j=1; j <= i; j++) {
+    for (let j = 1; j <= i; j++) {
         if (i % j == 0) {
             divisors++
         }
@@ -72,8 +71,8 @@ ID,Name,Occupation,Age 42,Bruce,Knight,41 57,Bob,Fry Cook,19 63,Blaine,Qui
 As you may have guessed, these values being “comma-separated” means that each comma is also a delimiter. This is why this type of data is traditionally viewed in tables. Here is how the data looks once fully parsed:
 
 */
-str = 'ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26'
 
+str = "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26"
 
 let cell1 = '';
 let cell2 = '';
@@ -98,13 +97,13 @@ while (!loggingComplete) {
         while (true) {
             if (str[i] === '\n' || i === str.length) {
                 break
-            } else {
+            } else { 
                 cell4 += str[i]
                 i ++
             }
         }
         console.log(`${cell1},${cell2},${cell3},${cell4}`)
-        numCommas = 0
+        numCommas= 0
         cell1Complete = false;
         cell2Complete = false;
         cell3Complete = false;
@@ -139,7 +138,7 @@ while (!loggingComplete) {
             cell4 = currentStr
             currentStr = ''
             cell4Complete = true;
-        }
+}
 
     } else {
         if (i >= str.length) {

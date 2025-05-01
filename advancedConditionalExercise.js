@@ -1,7 +1,4 @@
-
-// $100 +, 25%
-// 75 - 99, 15%
-// 50 - 74, 10%
+//Advanced Conditional Exercise
 
 let discountAmount; 
 let price = 85;
@@ -24,8 +21,8 @@ if (price >= 100) {
 } 
 
 
-taxAmount = discountedPrice * tax
-subtotal = discountedPrice + taxAmount
+taxAmount = discountedPrice * tax;
+subtotal = discountedPrice + taxAmount;
 
 console.log(`Original Price: ${price}`);
 console.log(`Discount Amount: ${discountAmount}`);
@@ -49,17 +46,17 @@ if (subtotal >= 100) {
     shippingCost = 20;
 }
 
-finalTotal = subtotal + shippingCost
+finalTotal = subtotal + shippingCost;
 console.log(`Shipping Cost: ${shippingCost}`);
 console.log(`Final Price (Tax + Shipping Cost): ${finalTotal}`);
 
 let giftText;
 
 if (price >= 120) {
-    giftText = 'Yes'
+    giftText = 'Yes';
 } else {
-    giftText = 'No'
+    giftText = 'No';
 
 }
 
-console.log(`Gift Status: ${giftText}`)
+console.log(`Gift Status: ${giftText}`);

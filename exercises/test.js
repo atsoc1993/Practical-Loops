@@ -75,42 +75,48 @@ console.log(result6);
 // let result7 = reverseString("hello!");
 // console.log(result7);
 
-function reverseString(str) {
-    let reversed = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-        reversed += str[i];
-    };
-    return reversed;
+// function reverseString(str) {
+//     let reversed = '';
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         reversed += str[i];
+//     };
+//     return reversed;
+// }
+
+// let result7 = reverseString("hello!");
+// console.log(result7); // !olleh
+
+
+// function countVowels(str) {
+//     let vowelCount = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u' || str[i] === 'y') {
+//             vowelCount ++;
+//         };
+//     };
+//     return vowelCount;
+// };
+// let result8 = countVowels("Catdog");
+// console.log(result8);
+
+
+
+// function filterEvenNumbers(arr) {
+//     let newArray = [];
+//     for (num of arr) {
+//         if (num % 2 === 0) {
+//             newArray.push(num);
+//         };
+//     };
+//     return newArray;
+// }
+// let result9 = filterEvenNumbers([1,2,3,4,5,6,7]);
+// console.log(result9);
+
+
+
+const items = [0, 1, 2, 3, 4]
+
+let newArray = () => {
+    
 }
-
-let result7 = reverseString("hello!");
-console.log(result7); // !olleh
-
-
-function countVowels(str) {
-    let vowelCount = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u' || str[i] === 'y') {
-            vowelCount ++;
-        };
-    };
-    return vowelCount;
-};
-let result8 = countVowels("Catdog");
-console.log(result8);
-
-
-
-function filterEvenNumbers(arr) {
-    let newArray = [];
-    for (num of arr) {
-        if (num % 2 === 0) {
-            newArray.push(num);
-        };
-    };
-    return newArray;
-}
-let result9 = filterEvenNumbers([1,2,3,4,5,6,7]);
-console.log(result9);
-
-

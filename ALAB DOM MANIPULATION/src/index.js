@@ -115,6 +115,6 @@ subMenuEl.addEventListener('click', (e) => {
       child.classList.remove("active");
     }
   })
-  mainEl.innerHTML = `<h1>${e.target.textContent}<h1/>`;
+  mainEl.innerHTML = `<h1>${e.target.textContent.toLocaleUpperCase()}<h1/>`;
 
 })

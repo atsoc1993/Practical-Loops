@@ -1,0 +1,37 @@
+.p-div {
+    background-color: rgb(44, 0, 218);
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.s-div {
+    background-color: rgb(0, 0, 0);
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}   
+
+.s-div div {
+    background-color: rgb(44, 0, 218);
+    height: 1px;
+    width: 1px;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+h1 {
+    position: absolute;
+    color: white;
+}

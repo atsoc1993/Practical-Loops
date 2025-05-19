@@ -1,7 +1,17 @@
 let pageHeight = window.innerHeight
 let pageWidth = window.innerWidth
 
-let winsHeader = document.createElementNS
+let winsHeader = document.createElement('h1')
+winsHeader.style.textAlign = 'center'
+winsHeader.style.border = '2px solid black'
+winsHeader.style.boxShadow = '2px 5px 7px black'
+winsHeader.style.width = pageWidth / 3 + 'px'
+winsHeader.style.left = ((pageWidth / 3) + winsHeader.offsetWidth) + 'px'
+winsHeader.innerText = 'Wins:0'
+winsHeader.style.fontSize = '5em'
+winsHeader.style.position = 'absolute'
+
+document.body.appendChild(winsHeader)
 let div = document.createElement('div')
 div.style.height = '500px'
 div.style.width = '500px'
@@ -30,6 +40,7 @@ innerDiv.style.height = Number(innerDiv.parentElement.style.height.split('px')[0
 innerDiv.style.display = 'flex'
 innerDiv.style.alignItems = 'center'
 innerDiv.style.backgroundColor = 'red'
+innerDiv.style.boxShadow = '2px 5px 7px black'
 
 let moveRight = true;
 let moveUp = true;
@@ -143,16 +154,17 @@ async function clickFast() {
     })
 
     await new Promise(resolve => setTimeout(resolve, 10000))
+    let leftStart = -300
 
+    let allgrayDivs = []
     if (totalClicks === 3) {
         newHeader.textContent = 'NEW TASK: YOU HAVE 5 SECONDS TO CLICK THE 3 GRAY BOXES'
 
 
-        let leftStart = -300
+        mainDiv.prepend(newHeader)
 
         blueBoxes.forEach((box) => {
 
-            mainDiv.prepend(newHeader)
             
             grayBox1 = document.createElement('div')
             grayBox2 = document.createElement('div')
@@ -161,12 +173,14 @@ async function clickFast() {
             grayBox1.style.top = Number(box.style.top.split('px')[0]) + 200 + 'px'
             grayBox1.style.left = Number(box.style.left.split('px')[0]) + leftStart + 'px'
             grayBox2.style.top = Number(box.style.top.split('px')[0]) + 200 + 'px'
-            grayBox2.style.left = Number(box.style.left.split('px')[0]) + (leftStart + 250) + 'px'
-            grayBox3.style.top = Number(box.style.top.split('px')[0]) + 200 + 'px'
-            grayBox3.style.left = Number(box.style.left.split('px')[0]) + (leftStart + 500) + 'px'
+            grayBox2.style.left = Number(box.style.left.split('px')[0]) + leftStart + 250 + 'px'
             
-            grayDivs = [grayBox1, grayBox2, grayBox3]
+            leftStart += 250
+            let grayDivs = [grayBox1, grayBox2]
 
+            allgrayDivs.push(...grayDivs)
+
+            
             grayDivs.forEach((grayDiv) => {
                 grayDiv.style.backgroundColor = 'grey'
                 grayDiv.style.position = 'absolute'
@@ -178,10 +192,13 @@ async function clickFast() {
                     newPElement.textContent = 'CLICKED!'
                     newPElement.style.fontSize = '3em'
                     grayDiv.style.backgroundColor = 'green'
-                    grayDiv.appendChild(newPElement)
                     if (!grayDiv.classList.contains('clicked')) {
                         grayDiv.classList.add('clicked')
+                        grayDiv.appendChild(newPElement)
                         totalClicks += 1
+                        if (totalClicks === 9) {
+                            winsHeader.innerText = 'Wins:' + Number(winsHeader.innerText.split(':')[1]) + 1
+                        }
                     }
                 })
                 mainDiv.parentElement.appendChild(grayDiv);
@@ -189,8 +206,7 @@ async function clickFast() {
 
         })
 
-        await new Promise(resolve => setTimeout(resolve, 10000))
-
+        await new Promise(resolve => setTimeout(resolve, 5000))
 
 
 
@@ -202,6 +218,9 @@ async function clickFast() {
             console.log(box)
             document.body.removeChild(box)
         })
+        allgrayDivs.forEach((grayDiv) => {
+            mainDiv.parentElement.removeChild(grayDiv);
+        })
         headerChallengeTextCreated = false;
 
     }
@@ -210,6 +229,21 @@ async function clickFast() {
     // mainDiv.removeChild(blueBox3)
 }
 moveDivAround()
+
+function displayForm() {
+    let form = document.createElement('form')
+    form.style.border = '2px solid black'
+    form.style.boxShadow = '2px 5px 7px black'
+    form.style.height = pageHeight / 2.2 + 'px'
+    form.style.position = 'absolute'
+    form.style.top = pageHeight / 2 + 'px'
+    form.style.width = pageWidth - 500 + 'px';
+    form.style.right = 250 + 'px'
+    let inputOne = document.createElement('input')
+    form.appendChild(inputOne);
+    document.body.appendChild(form)
+}
+displayForm()
 
 innerDiv.addEventListener('click', async (e) => {
     clearInterval(interval)

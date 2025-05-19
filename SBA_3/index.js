@@ -197,7 +197,7 @@ async function clickFast() {
                         grayDiv.appendChild(newPElement)
                         totalClicks += 1
                         if (totalClicks === 9) {
-                            winsHeader.innerText = 'Wins:' + Number(winsHeader.innerText.split(':')[1]) + 1
+                            winsHeader.innerText = 'Wins:' + (Number(winsHeader.innerText.split(':')[1]) + 1)
                         }
                     }
                 })
@@ -232,6 +232,10 @@ moveDivAround()
 
 function displayForm() {
     let form = document.createElement('form')
+    form.style.display = 'flex'
+    form.style.justifyContent = 'center'
+    form.style.flexDirection = 'column'
+    form.style.alignItems = 'center'
     form.style.border = '2px solid black'
     form.style.boxShadow = '2px 5px 7px black'
     form.style.height = pageHeight / 2.2 + 'px'
@@ -239,8 +243,45 @@ function displayForm() {
     form.style.top = pageHeight / 2 + 'px'
     form.style.width = pageWidth - 500 + 'px';
     form.style.right = 250 + 'px'
-    let inputOne = document.createElement('input')
-    form.appendChild(inputOne);
+    let feedBackLabel = document.createElement('label')
+    feedBackLabel.textContent = 'What did you think of the game?'
+    feedBackLabel.style.fontSize = '5em'
+    let feedbackInput = document.createElement('input')
+    feedbackInput.style.margin = '250px'
+    feedbackInput.style.width = '2000px'
+    feedbackInput.style.height = '750px'
+    feedbackInput.placeholder = 'Best Game ever! 10/10'
+    feedbackInput.style.fontSize = '5em'
+    feedbackInput.minLength = 10_000_000_000
+    feedbackInput.style.textAlign = 'center'
+    let submitButton = document.createElement('input')
+    submitButton.type = 'submit'
+    submitButton.style.height = '200px';
+    submitButton.style.width = '300px';
+    submitButton.style.fontSize = '3em'
+
+    let recommendToAFriendLabel = document.createElement('label')
+    recommendToAFriendLabel.textContent = 'Would you recommend this game to a friend?'
+    recommendToAFriendLabel.style.fontSize = '3em'
+
+    form.appendChild(feedBackLabel);
+    form.appendChild(feedbackInput);
+    form.appendChild(recommendToAFriendLabel);
+    
+    let yesTextLabel = document.createElement('label')
+    yesTextLabel.textContent = 'YES'
+    yesTextLabel.style.fontSize = '3em'
+    let radioButton = document.createElement('input')
+    radioButton.type = 'radio'
+    radioButton.style.transform = 'scale(2)'
+    radioButton.style.marginBottom = '20px'
+    
+    form.appendChild(yesTextLabel)
+    form.appendChild(radioButton)
+    
+    
+    form.appendChild(submitButton)
+
     document.body.appendChild(form)
 }
 displayForm()

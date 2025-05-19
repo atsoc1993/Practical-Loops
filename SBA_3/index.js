@@ -153,12 +153,12 @@ async function clickFast() {
         mainDiv.parentElement.appendChild(box);
     })
 
-    await new Promise(resolve => setTimeout(resolve, 10000))
+    await new Promise(resolve => setTimeout(resolve, 5000))
     let leftStart = -300
 
     let allgrayDivs = []
     if (totalClicks === 3) {
-        newHeader.textContent = 'NEW TASK: YOU HAVE 5 SECONDS TO CLICK THE 3 GRAY BOXES'
+        newHeader.textContent = 'NEW TASK: YOU HAVE 5 SECONDS TO CLICK THE 6 GRAY BOXES'
 
 
         mainDiv.prepend(newHeader)

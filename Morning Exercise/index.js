@@ -73,6 +73,7 @@ function resetBoard () {
             ticTacToeDiv.id = '';
         };
     };
+    drawX = true;
 };
 
 let drawX = true;

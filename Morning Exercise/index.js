@@ -28,7 +28,6 @@ function styleTicTacToeBoxes(ticTacToeBoxes) {
             box.style.textAlign = 'center';
             box.style.alignContent = 'center';
             box.classList.add('test')
-            console.log(box.classList)
 
             box.addEventListener('click', () => {
                 if (!box.id) {

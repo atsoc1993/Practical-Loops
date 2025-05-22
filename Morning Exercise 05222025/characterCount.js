@@ -50,30 +50,27 @@ function changeDenominationsOne({ itemCost, amountPaid }) {
 function changeDenominationsTwo({ itemCost, amountPaid }) {
 
     let denominationsObj = {
-        twentiesDenomination: 2000,
-        fivesDenomination: 500,
-        onesDenomination: 100,
-        quartersDenomination: 25,
-        nicklesDenomination: 5,
-        penniesDenomination: 1,
-    };
-
-    let changeObj = {
-        twentiesDenomination: 0,
-        fivesDenomination: 0,
-        onesDenomination: 0,
-        quartersDenomination: 0,
-        nicklesDenomination: 0,
-        penniesDenomination: 0
+        twenties: 2000,
+        fives: 500,
+        ones: 100,
+        quarters: 25,
+        nickles: 5,
+        pennies: 1,
     };
 
     let change = amountPaid - itemCost;
+
+    let changeObj = {};
+
     for (denProp in denominationsObj) {
-        console.log(denProp)
-        while ((change - denominationsObj[denProp]) > 0) {
+        while ((change - denominationsObj[denProp]) >= 0) {
             change -= denominationsObj[denProp];
-            changeObj[denProp] += 1;
-        }
+            if (changeObj[denProp]) {
+                changeObj[denProp]++;
+            } else {
+                changeObj[denProp] = 1;
+            }
+        }   
     }
     return changeObj;
 }

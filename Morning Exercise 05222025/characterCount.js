@@ -50,12 +50,12 @@ function changeDenominationsOne({ itemCost, amountPaid }) {
 function changeDenominationsTwo({ itemCost, amountPaid }) {
 
     let denominationsObj = {
-        twenties: 2000,
-        fives: 500,
-        ones: 100,
-        quarters: 25,
-        nickles: 5,
-        pennies: 1,
+        twenties: 20,
+        fives: 5,
+        ones: 1,
+        quarters: 0.25,
+        nickles: 0.05,
+        pennies: 0.01,
     };
 
     let change = amountPaid - itemCost;
@@ -76,7 +76,7 @@ function changeDenominationsTwo({ itemCost, amountPaid }) {
 }
 
 let denominationsObjResultOne = changeDenominationsOne({ itemCost: (20 * 100), amountPaid: (66.56 * 100) });
-let denominationsObjResultTwo = changeDenominationsTwo({ itemCost: (20 * 100), amountPaid: (66.56 * 100) });
+let denominationsObjResultTwo = changeDenominationsTwo({ itemCost: 20, amountPaid: 66.56});
 console.log(denominationsObjResultOne);
 console.log(denominationsObjResultTwo);
 

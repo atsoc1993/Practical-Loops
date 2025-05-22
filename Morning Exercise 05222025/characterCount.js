@@ -68,7 +68,6 @@ function changeDenominationsTwo({ itemCost, amountPaid }) {
     };
 
     let change = amountPaid - itemCost;
-    console.log("Test")
     for (denProp in denominationsObj) {
         console.log(denProp)
         while ((change - denominationsObj[denProp]) > 0) {

@@ -16,6 +16,8 @@ console.log(resultObj);
 
 function changeDenominationsOne({ itemCost, amountPaid }) {
 
+    itemCost = itemCost * 100
+    amountPaid = amountPaid * 100
     let denominationsObj = {};
     let change = amountPaid - itemCost;
     let twentiesDenomination = 2000;
@@ -75,7 +77,7 @@ function changeDenominationsTwo({ itemCost, amountPaid }) {
     return changeObj;
 }
 
-let denominationsObjResultOne = changeDenominationsOne({ itemCost: (20 * 100), amountPaid: (66.56 * 100) });
+let denominationsObjResultOne = changeDenominationsOne({ itemCost: 20, amountPaid: 66.56});
 let denominationsObjResultTwo = changeDenominationsTwo({ itemCost: 20, amountPaid: 66.56});
 console.log(denominationsObjResultOne);
 console.log(denominationsObjResultTwo);

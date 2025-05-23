@@ -11,10 +11,10 @@ function characterCounter({ string }) {
 };
 
 
-let resultObj = characterCounter({ string: 'test' });
-console.log(resultObj);
+// let resultObj = characterCounter({ string: 'test' });
+// console.log(resultObj);
 
-function changeDenominationsOne({ itemCost, amountPaid }) {
+function changeOoneTime({ itemCost, amountPaid }) {
 
     itemCost = itemCost * 100
     amountPaid = amountPaid * 100
@@ -29,10 +29,10 @@ function changeDenominationsOne({ itemCost, amountPaid }) {
 
     denominationsObj.twenties = Math.floor(change / twentiesDenomination);
     change -= denominationsObj.twenties * twentiesDenomination;
-    ;
+
     denominationsObj.fives = Math.floor(change / fivesDenomination);
     change = change - (denominationsObj.fives * fivesDenomination);
-    ;
+
     denominationsObj.ones = Math.floor(change / onesDenomination);
     change -= denominationsObj.ones * onesDenomination;
 
@@ -49,7 +49,7 @@ function changeDenominationsOne({ itemCost, amountPaid }) {
 }
 
 
-function changeDenominationsTwo({ itemCost, amountPaid }) {
+function changeOnTime({ itemCost, amountPaid }) {
 
     let denominationsObj = {
         twenties: 20,
@@ -77,9 +77,35 @@ function changeDenominationsTwo({ itemCost, amountPaid }) {
     return changeObj;
 }
 
-let denominationsObjResultOne = changeDenominationsOne({ itemCost: 20, amountPaid: 66.56});
-let denominationsObjResultTwo = changeDenominationsTwo({ itemCost: 20, amountPaid: 66.56});
-console.log(denominationsObjResultOne);
-console.log(denominationsObjResultTwo);
+// let denominationsObjResultOne = changeDenominationsOne({ itemCost: 20, amountPaid: 66.56});
+// let denominationsObjResultTwo = changeDenominationsTwo({ itemCost: 20, amountPaid: 66.56});
+// console.log(denominationsObjResultOne);
+// console.log(denominationsObjResultTwo);
 
 
+
+
+function subtractTwoXTimesO_nTime(startingNumber, timesToSubtract) {
+    let timesSubtracted = timesToSubtract
+    let endingNumber = startingNumber
+    while (timesSubtracted !== 0) {
+        endingNumber -= 2
+        timesSubtracted -= 1
+    }
+
+    return endingNumber
+}
+
+
+function subtractTwoXTimesO_oneTime(startingNumber, timesToSubtract) {
+    let endingNumber = startingNumber - (timesToSubtract * 2)
+    return endingNumber
+}
+
+console.log("Starting O(n) Time Function")
+console.log(subtractTwoXTimesO_nTime(1000, 3000000000))
+console.log("Finished O(n) Time Function")
+
+console.log("Starting O(1) Time Function")
+console.log(subtractTwoXTimesO_oneTime(1000, 3000000000))
+console.log("Finished O(1) Time Function")

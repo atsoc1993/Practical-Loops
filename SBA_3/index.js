@@ -286,8 +286,11 @@ function displayForm() {
 }
 displayForm()
 
+
 innerDiv.addEventListener('click', async (e) => {
     clearInterval(interval)
     await clickFast()
     moveDivAround()
 })
+
+

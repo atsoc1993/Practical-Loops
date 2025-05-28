@@ -26,4 +26,4 @@ for (let i = 1; i < 10; i++) {
     allUserData.push(await getUserData(i));
 };
 
-// console.log(allUserData)
+console.log(allUserData)

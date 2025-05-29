@@ -59,7 +59,7 @@ class Person {
         this.mood += 1;
         this.bankAccount += 10;
     };
-    buyHamster(hamster) {
+    buyHamster(Hamster: hamster) {
         this.hamsters.push(hamster);
         this.mood += 10;
         this.bankAccount -= hamster.getPrice();

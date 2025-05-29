@@ -369,3 +369,5 @@ Promise.all([personal(), business(), residence()])
 //         console.log(this.departments)
 //     };
 // };
+
+Response.json()

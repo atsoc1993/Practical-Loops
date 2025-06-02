@@ -3,12 +3,10 @@ import { createAndAddTxnList } from "./ModifyHTML.js"
 
 function addBaseHTML() {
     let baseDiv = document.createElement('div')
-    baseDiv.style.display = 'flex'
-    baseDiv.style.flexDirection = 'column'
-    baseDiv.style.textAlign = 'center'
-    
+    baseDiv.id = 'baseDiv'
+
     let latestBlockHashDiv = document.createElement('div');
-    latestBlockHashDiv.style.margin = '50px'
+    latestBlockHashDiv.id = 'blockHashDiv'
     let latestBlockHashPTag = document.createElement('p');
     latestBlockHashPTag.id = 'blockHashPTag'
     latestBlockHashPTag.textContent = 'Latest Block Hash: '
@@ -21,8 +19,6 @@ function addBaseHTML() {
 
     let latestBlockTransactionsDiv = document.createElement('div');
     latestBlockTransactionsDiv.id = 'blockTxsDiv'
-    latestBlockTransactionsDiv.style.margin = '50px'
-    latestBlockTransactionsDiv.style.alignItems = 'center'
     let getLatestBlockHashTransactionsButton = document.createElement('button')
     getLatestBlockHashTransactionsButton.id = 'transactionsButton'
     getLatestBlockHashTransactionsButton.textContent = 'Get Latest Block Transactions'

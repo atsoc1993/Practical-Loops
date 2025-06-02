@@ -1,0 +1,18 @@
+#baseDiv {
+    display: 'flex';
+    flex-direction: 'column';
+    text-align: center;
+}
+
+#blockHashDiv {
+    margin: 50px;
+}
+
+#blockTxsDiv {
+    margin: 50px;
+    align-items: 'center';
+}
+
+#txHashList {
+    list-style: none;
+}

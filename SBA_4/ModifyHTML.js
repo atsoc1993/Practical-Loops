@@ -8,12 +8,18 @@ function createAndAddTxnList(txHashes) {
         newTxHashList.appendChild(newTxHashListItem);
     };
     if (document.getElementById('txHashList')) {
-        latestBlockTransactionsDiv.replaceChildren(newTxHashList);
+        latestBlockTransactionsDiv.replaceChild(newTxHashList, latestBlockTransactionsDiv.lastChild);
     } else {
-        latestBlockTransactionsDiv.appendChild(newTxHashList);
-
+        latestBlockTransactionsDiv.replaceChild(newTxHashList, latestBlockTransactionsDiv.lastChild);
     }
 }
 
-export { createAndAddTxnList };
+function addPleaseWaitPTag() {
+    let latestBlockTransactionsDiv = document.getElementById('blockTxsDiv')
+    let pleaseWaitPTag = document.createElement('p')
+    pleaseWaitPTag.textContent = 'Fetching transactions . . . '
+    latestBlockTransactionsDiv.replaceChild(pleaseWaitPTag, latestBlockTransactionsDiv.lastChild);
+}
+
+export { createAndAddTxnList, addPleaseWaitPTag };
 

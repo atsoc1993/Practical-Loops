@@ -1,5 +1,5 @@
 import { getLatestBlockHash, getLatestBlockHashTransactions } from "./getters.js"
-import { createAndAddTxnList } from "./ModifyHTML.js"
+import { createAndAddTxnList, addPleaseWaitPTag } from "./ModifyHTML.js"
 
 function addBaseHTML() {
     let baseDiv = document.createElement('div')
@@ -9,7 +9,7 @@ function addBaseHTML() {
     latestBlockHashDiv.id = 'blockHashDiv'
     let latestBlockHashPTag = document.createElement('p');
     latestBlockHashPTag.id = 'blockHashPTag'
-    latestBlockHashPTag.textContent = 'Latest Block Hash: '
+    latestBlockHashPTag.textContent = 'BTC Latest Block Hash: '
     let getLatestBlockHashButton = document.createElement('button')
     getLatestBlockHashButton.id = 'blockHashButton'
     getLatestBlockHashButton.textContent = 'Get Latest Block Hash'
@@ -44,9 +44,10 @@ function addEventListenersToButtons() {
     let getLatestBlockHashTransactionsButton = document.getElementById('transactionsButton')
     getLatestBlockHashTransactionsButton.addEventListener('click', (e) => {
         console.log("Clicked get latest block txs button")
+        addPleaseWaitPTag();
         getLatestBlockHash()
             .then(res => getLatestBlockHashTransactions(res))
-            .then(res => createAndAddTxnList(res));
+            .then(res => createAndAddTxnList(res))
     })
 }
 

@@ -70,7 +70,7 @@ class NCycle<T> {
   stop() {
     this.status = "stopped";
   }
-  print(num: number | 0) : void {
+  print(num: number = 0) : void {
     if (typeof this.make === 'string') {
       console.log(`This is a ${this.make} ${this.model} NCycle`)
     } else if (Array.isArray(this.make) && Array.isArray(this.model)) { 

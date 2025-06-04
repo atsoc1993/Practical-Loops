@@ -1,0 +1,3 @@
+npm install -g typescript ts-node  (Installs typescript and ts-node to run .ts files globally)
+npx tsc --init (create a ts config file)
+ts-node index.ts (Runs .ts files)

@@ -1,7 +1,7 @@
 // PS C:\Users\atsoc> node -e 'console.log(17 + 25)'
 // 42
 
-// console.log("Hello World!")
+// console.log("Hello World!");
 
 const http = require('http');
 
@@ -11,26 +11,26 @@ const server = http.createServer((req, res) => {
         case '/':
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/plain');
-            res.write('Hello World!\n')
-            break
+            res.write('Hello World!\n');
+            break;
 
         case '/h1':
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/plain');
-            res.write('<h1 style="color: red">This is a header!</h1>')
-            break
+            res.write('<h1 style="color: red">This is a header!</h1>');
+            break;
 
         case '/pTag':
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/plain');
-            res.write('<p style="color: blue">This is a P Tag!</p>')
-            break
+            res.write('<p style="color: blue">This is a P Tag!</p>');
+            break;
 
         default:
             res.statusCode = 404;
             res.setHeader('Content-Type', 'text/plain');
-            res.write('Invalid Endpoint')
-            break
+            res.write('Invalid Endpoint');
+            break;
     }
 
     res.end();
@@ -38,5 +38,10 @@ const server = http.createServer((req, res) => {
 });
 
 
-server.listen(3000, '127.0.0.1')
+let port = 3000;
+let hostname = '127.0.0.1';
+
+server.listen(port, hostname, () => {
+    console.log(`Server is running on port: ${port} via host: ${hostname}`);
+});
 

@@ -2,6 +2,7 @@ function createAndAddTxnList(txHashes) {
     let latestBlockTransactionsDiv = document.getElementById('blockTxsDiv');
     let newTxHashList = document.createElement('ul');
     newTxHashList.id = 'txHashList';
+
     for (let txHash of txHashes) {
         let newTxHashListItem = document.createElement('li');
         let txLinkAnchor = document.createElement('a')
@@ -11,11 +12,7 @@ function createAndAddTxnList(txHashes) {
         newTxHashListItem.appendChild(txLinkAnchor);
         newTxHashList.appendChild(newTxHashListItem);
     };
-    if (document.getElementById('txHashList')) {
-        latestBlockTransactionsDiv.replaceChild(newTxHashList, latestBlockTransactionsDiv.lastChild);
-    } else {
-        latestBlockTransactionsDiv.replaceChild(newTxHashList, latestBlockTransactionsDiv.lastChild);
-    };
+    latestBlockTransactionsDiv.replaceChild(newTxHashList, latestBlockTransactionsDiv.lastChild);
 };
 
 function addPleaseWaitPTag() {

@@ -3,6 +3,7 @@ const router = express.Router();
 
 const users = require("../data/users");
 const error = require("../utilities/error");
+const posts = require("../data/posts");
 
 router
   .route("/")
@@ -80,5 +81,29 @@ router
     if (user) res.json(user);
     else next();
   });
+
+router
+  .route("/:id/posts")
+  .get((req, res, next) => {
+    console.log(`Trying to get posts for user ID: ${req.params.id}`)
+    const user = users.find((u) => u.id == req.params.id);
+    if (user) res.json(user);
+    else next();
+    const links = [
+      {
+        href: `/${req.params.id}/posts`,
+        rel: "",
+        type: "GET",
+      }
+    ];
+
+    let userPosts = posts.filter((post) => {
+      return post.userId == req.params.id
+    });
+    console.log(userPosts);
+    if (userPosts) res.json({ userPosts, links });
+    else next();
+  })
+
 
 module.exports = router;

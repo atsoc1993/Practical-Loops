@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const users = require("../data/users");
 const posts = require("../data/posts");
 const error = require("../utilities/error");
 
@@ -30,6 +31,30 @@ router
       res.json(posts[posts.length - 1]);
     } else next(error(400, "Insufficient Data"));
   });
+
+
+
+
+router
+  .route("/:userId")
+  .get((req, res) => {
+    const links = [
+      {
+        href: "posts/:userId",
+        rel: ":id",
+        type: "GET",
+      },
+    ];
+
+    const user = users.find((u) => u.id == req.params.userId);
+    if (!user) next(error(404), "User not found")
+
+    let usersPosts = posts.filter((post) => {
+      return post.userId == req.params.userId
+    });
+    if (usersPosts.length == 0) next(error(400, "Insufficient data"))
+    res.json({ usersPosts, links });
+  })
 
 router
   .route("/:id")

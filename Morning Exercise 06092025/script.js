@@ -2,21 +2,16 @@ import express from 'express'
 
 let app = express();
 
-let bottles = 99;
-
 app.get('/', (req, res) => {
-    res.send(`<h1>${bottles} Bottles of beer on the wall</h1> <a href='http://localhost:${port}/${bottles - 1}'>Take one down, pass it around . . .</a>'`);
-    bottles--;
+    res.send(`<h1>99 Bottles of beer on the wall</h1> <a href='/98'>Take one down, pass it around . . .</a>`);
 });
 
 app.get('/:bottles', (req, res) => {
-    console.log(req.params)
+    let arg = req.params.bottles
     if (req.params.bottles != 0) {
-        res.send(`<h1>${bottles} Bottles of beer on the wall</h1> <a href='http://localhost:${port}/${bottles - 1}'>Take one down, pass it around . . .</a>'`);
-        bottles--;
+        res.send(`<h1>${arg} Bottles of beer on the wall</h1> <a href='/${arg - 1}'>Take one down, pass it around . . .</a>'`);
     } else {
-        bottles = 99;
-        res.send(`<a href='http://localhost:${port}/'>Start Over?</a>`);
+        res.send(`<a href='/'>Start Over?</a>`);
     };
 });
 

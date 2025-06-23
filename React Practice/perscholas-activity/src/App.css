@@ -24,6 +24,12 @@ p {
   display: flex;
   justify-content: flex-start;
   padding-left: 20px;
+  transition: 0.3s;
+  background-color: white;
+}
+
+.employee-outer-div:hover {
+  transform: scale(1.1);
 }
 
 img {

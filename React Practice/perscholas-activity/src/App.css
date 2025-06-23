@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-decoration: underline;
+  margin-bottom: -10px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  color: gray
+}
+
+.employee {
+  border: 1px solid black;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+}

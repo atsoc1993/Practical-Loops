@@ -9,6 +9,12 @@
   display: flex;
   flex-direction: row;
 }
+
+.profile-picture {
+  box-shadow: 2px 3px 4px gray;
+  height: 300px;
+  margin: 10px;
+}
 .description-div {
   width: 500px;
   height: 300px;
@@ -17,12 +23,6 @@
   padding-left: 20px;
   align-content: center;
   padding-top: 10px;
-}
-
-.profile-picture {
-  box-shadow: 2px 3px 4px gray;
-  height: 300px;
-  margin: 10px;
 }
 
 .icon {

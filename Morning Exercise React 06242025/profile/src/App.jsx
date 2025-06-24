@@ -1,9 +1,8 @@
-import ProfileDetails from "./ProfileDetails"
+import ProfileDetails from "./ProfileDetails";
 import ProfileImage from "./ProfileImage";
-import './App.css'
+import './App.css';
 
 function App() {
-
   return (
     <div className="root-div">
       <div className="card">
@@ -11,7 +10,7 @@ function App() {
         <ProfileDetails />
       </div>
     </div>
-  )
+  );
 };
 
 export default App;

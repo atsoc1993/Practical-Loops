@@ -1,8 +1,8 @@
 import ProfileLinks from "./ProfileLinks";
 
 function ProfileDetails() {
-  let profileName = 'Leo Costa'
-  let profileDescription = 'Hello there, I\m Leo Costa, full-stack developer. I have a fascination with decentralized solutions and smart contract development; I also have experience with the MERN stack, Python & C#.'
+  let profileName = 'Leo Costa';
+  let profileDescription = 'Hello there, I\m Leo Costa, full-stack developer. I have a fascination with decentralized solutions and smart contract development; I also have experience with the MERN stack, Python & C#.';
 
   return (
     <div className="description-div">
@@ -10,7 +10,7 @@ function ProfileDetails() {
       <p>{profileDescription}</p>
       <ProfileLinks/>
     </div>
-  )
-}
+  );
+};
 
 export default ProfileDetails;

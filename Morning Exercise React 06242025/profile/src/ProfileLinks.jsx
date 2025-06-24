@@ -8,7 +8,7 @@ function ProfileLinks() {
                 <img className="icon" src="/linkedin.png"></img>
             </a>
         </div>
-    )
-}
+    );
+};
 
-export default ProfileLinks
+export default ProfileLinks;
